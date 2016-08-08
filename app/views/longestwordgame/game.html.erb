@@ -1,0 +1,15 @@
+<h1>Longest Word Game</h1>
+
+
+<%= @grid %>
+
+<form action="/score" method="get">
+  <label for="guess">Guess!</label>
+  <input type="text" id="guess" name="guess" placeholder="your guess?">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="submit" value="submit">
+</form>
+
+<% if flash[:notice] %>
+  <p style='color:red'><%= flash[:notice] %></p>
+<% end %>
